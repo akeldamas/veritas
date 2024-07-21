@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { ConfigModule, ConfigService, ConfigType } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import databaseConfig, { CONFIG_DATABASE } from './config/database.config';
+import { RdaModule } from './rda/rda.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import databaseConfig, { CONFIG_DATABASE } from './config/database.config';
       },
       inject: [ConfigService],
     }),
+    RdaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
